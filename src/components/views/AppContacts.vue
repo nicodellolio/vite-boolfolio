@@ -6,7 +6,7 @@ export default {
 
 <template>
     <div>
-        <h1>Contact Me</h1>
+        <h1 class="text-dark">Contact Me</h1>
     </div>
 </template>
 

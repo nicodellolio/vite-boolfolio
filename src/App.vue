@@ -1,7 +1,7 @@
 <script>
 import axios from 'axios';
 
-import ProjectCard from "./components/ProjectCard.vue";
+
 
 
 export default {
@@ -47,6 +47,10 @@ export default {
       </form>
     </div>
   </nav>
+
+  <main>
+    <Routerview />
+  </main>
 
 
 
