@@ -1,14 +1,18 @@
 <script>
+
+import AppJumbo from '../AppJumbo.vue';
+
 export default {
-    name: 'AppHome'
-};
+    name: 'AppHome',
+    components: {
+        AppJumbo
+    }
+}
+
 </script>
 
 <template>
-    <div>
-        <h1>Home Page</h1>
-    </div>
+    <AppJumbo />
 </template>
 
-<style>
-</style>
+<style></style>

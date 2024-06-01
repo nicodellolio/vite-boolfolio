@@ -6,7 +6,7 @@ export default {
   name: 'ProjectCard',
 
   props: {
-    projects: Array,
+    projects: Object,
   },
 
   methods: {
