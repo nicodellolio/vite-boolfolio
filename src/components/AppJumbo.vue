@@ -17,22 +17,21 @@ export default {
 
         <div class="left-side ps-3 z-2">
 
-            <h1 class="fw-bold">
+            <h1 class="jumbo-title">
                 Full-Stack Portfolio
             </h1>
 
 
-            <p class="fs-4 w-50 fw-light">
+            <p class="fs-2 w-50 fw-light">
                 Welcome to my Full-Stack Web Developer Portfolio. Here I collect some of my major projects created in
                 these
                 years.
-                I developed my skills throughtout a full-course with <span class="fw-semibold"
-                    style="color: limegreen">Boolean</span>
+                I developed my skills throughtout a full-course with <span class="" style="color: limegreen">Boolean</span>
             </p>
 
 
             <div class="">
-                <a class="btn btn-warning" href="{{route('admin.projects.index')}}">Go to your projects</a>
+                <RouterLink class="text-dark btn btn-warning fw-normal" :to="{ name: 'projects' }">My latest Projects</RouterLink>
             </div>
 
         </div>

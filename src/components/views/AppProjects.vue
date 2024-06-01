@@ -18,7 +18,7 @@ export default {
         }
     },
     methods: {
-        callApi(url) {
+        callAPI(url) {
 
             axios
                 .get(url)
@@ -29,11 +29,20 @@ export default {
                 .catch(err => {
                     console.error(err);
                 })
+        },
+
+        nextPage(url){
+            this.callAPI(url)
+        },
+        prevPage(url){
+            this.callAPI(url)
         }
     },
     mounted() {
         let url = this.base_api_url + this.base_projects_url
-        this.callApi(url)
+        this.callAPI(url)
+
+
     }
 };
 </script>
@@ -41,7 +50,7 @@ export default {
 <template>
     <div>
         <h1>Here are my latest works</h1>
-        <ProjectCard :projects="projects" />
+        <ProjectCard :projects="projects" @next-page="nextPage" @prev-page="prevPage" />
 
     </div>
 </template>

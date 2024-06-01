@@ -53,38 +53,29 @@ export default {
     </div>
   </div>
 
-  <div class="d-flex justify-content-center paginator-pp">
+   <div class="d-flex justify-content-center paginator-pp">
 
     <nav aria-label="Page navigation">
-      <ul
-      class="pagination"
-      >
-      <li class="page-item disabled">
-        <a class="page-link" :href="projects.prev_page_url" aria-label="Previous">
-          <span aria-hidden="true">&laquo;</span>
-        </a>
-      </li>
-      <li class="page-item active" aria-current="page">
-        <a class="page-link" :href="projects.first_page_url">1</a>
-      </li>
-      <li class="page-item"><a class="page-link" :href="projects.next_page_url">2</a></li>
-      <li class="page-item">
-        <a class="page-link" :href="projects.last_page_url">3</a>
-      </li>
-      <li class="page-item">
-        <a class="page-link" :href="projects.next_page_url" aria-label="Next">
-          <span aria-hidden="true">&raquo;</span>
-        </a>
-      </li>
-    </ul>
-  </nav>
-</div>
-  
-  
+      <ul class="pagination">
+        <li class="page-item">
+          <button style="border-radius: 100%;" class="page-link px-2 py-0 mt-3" :class="{'bg-secondary border-0 pb-1' : projects.current_page == 1}" @click="$emit('prevPage', projects.prev_page_url)" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+          </button>
+        </li>
+
+        <li class="page-item">
+          <a style="border-radius: 100%;" class="page-link px-3 py-0 fs-2 mx-1 fw-bold" :href="projects.first_page_url">{{ projects.current_page }}</a>
+        </li>
+
+        <li class="page-item">
+          <button  style="border-radius: 100%;" class="page-link px-2 py-0 mt-3" :class="{'bg-secondary border-0 text-dark' : projects.current_page == projects.last_page}" @click="$emit('nextPage', projects.next_page_url)" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </div> 
+
 </template>
 
-<style lang="css">
-
-
-
-</style>
+<style lang="css"></style>

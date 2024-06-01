@@ -40,16 +40,20 @@ img.jumbo-img {
   right: 5%;
   z-index: 99;
   width: 50%;
-  margin-bottom: 9.8vh;
+  max-width: 690px;
+  margin-bottom: 8.9vh;
 
 }
 
 .jumbotron {
   min-height: 640px;
-  width: 80%;
   height: 80vh;
+  width: 80%;
+  max-width: 1125px;
 
-  h1 {
-    font-size: 700%;
+  .jumbo-title {
+    font-size: 800%;
+    font-weight: 900;
+
   }
 }
