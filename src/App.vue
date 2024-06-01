@@ -1,11 +1,12 @@
 <script>
-import axios from 'axios';
 
-
-
+import { RouterView } from 'vue-router'
 
 export default {
   name: 'App',
+  components: {
+    RouterView,
+  }
 }
 </script>
 
@@ -17,43 +18,41 @@ export default {
     <div class="collapse navbar-collapse" id="collapsibleNavId">
       <ul class="navbar-nav me-auto mt-2 mt-lg-0 d-flex align-items-center gap-4">
         <li class="nav-item text-light">
-          <router-link class="text-warning nav-link" :to="{ name: 'home' }">Home</router-link>
+          <RouterLink class="text-warning nav-link" :to="{ name: 'home' }">Home</RouterLink>
         </li>
         <li class="nav-item">
-          <router-link class="text-warning nav-link" :to="{ name: 'projects' }">Projects</router-link>
+          <RouterLink class="text-warning nav-link" :to="{ name: 'projects' }">Projects</RouterLink>
         </li>
         <li class="nav-item">
-          <router-link class="text-warning nav-link" :to="{ name: 'about' }">About</router-link>
+          <RouterLink class="text-warning nav-link" :to="{ name: 'about' }">About</RouterLink>
         </li>
         <li class="nav-item">
-          <router-link class="text-warning nav-link" :to="{ name: 'contacts' }">Contacts</router-link>
+          <RouterLink class="text-warning nav-link" :to="{ name: 'contacts' }">Contacts</RouterLink>
         </li>
 
-
+        
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true"
-            aria-expanded="false">Dropdown</a>
+          aria-expanded="false">Dropdown</a>
           <div class="dropdown-menu" aria-labelledby="dropdownId">
             <a class="dropdown-item" href="#">Action 1</a>
             <a class="dropdown-item" href="#">Action 2</a>
           </div>
         </li>
       </ul>
-      <form class="d-flex my-2 my-lg-0">
-        <input class="form-control me-sm-2" type="text" placeholder="Search" />
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-          Search
-        </button>
-      </form>
     </div>
   </nav>
 
+  <p>
+    <strong>Current route path:</strong> {{ $route.fullPath }}
+  </p>
+  
   <main>
     <Routerview />
   </main>
-
-
-
+  
+  
+  
 </template>
 
 <style></style>
