@@ -44,10 +44,12 @@ export default {
                     <h1 class="card-title display-6">
                         {{ project.title }}
                     </h1>
-                    <div class="card-body left-side">
-                        <img :src="base_api_url + '/storage/' + project.preview_image" alt="">
+                    <div class="card-body d-flex">
+                        <div class="left-side w-50">
+                            <img class="img-fluid" :src="base_api_url + '/storage/' + project.preview_image" alt="">
+                        </div>
+                        <div class="right-side w-50"></div>
                     </div>
-                    <div class="card-body right-side"></div>
                 </div>
             </div>
         </div>

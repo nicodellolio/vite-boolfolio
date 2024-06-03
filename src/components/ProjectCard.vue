@@ -24,7 +24,7 @@ export default {
       <div v-for="project in projects.data" class="col-4 g-3">
 
 
-        <router-link class="text-decoration-none" :to="{ name: 'single-project', params: { id: project.id } }">
+        <router-link class="text-decoration-none" :to="{ name: 'SingleProject', params: { id: project.id } }">
 
           <div class="card h-100">
             <div class="title_box d-flex bg-gradient justify-content-between bg-secondary p-3">
