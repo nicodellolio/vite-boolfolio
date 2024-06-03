@@ -49,7 +49,7 @@ export default {
 
 <template>
     <div>
-        <h1>Here are my latest works</h1>
+        <h1>All my works</h1>
         <ProjectCard :projects="projects" @next-page="nextPage" @prev-page="prevPage" />
 
     </div>

@@ -1,10 +1,12 @@
 <script>
+import axios from 'axios';
+
 export default {
     data() {
         return {
             'base_api_url': 'http://127.0.0.1:8000',
             'base_projects_url': '/api/projects',
-            'projects': []
+            'project': '',
         }
     },
     methods: {
@@ -13,8 +15,14 @@ export default {
             axios
                 .get(url)
                 .then(response => {
-                    console.log(response);
-                    this.projects = response.data.projects
+
+                    if (response.data.success) {
+                        console.log(response);
+                        this.project = response.data.response
+                        
+                    } else {
+                        //fai una merda di 404
+                    }
                 })
                 .catch(err => {
                     console.error(err);
@@ -22,20 +30,27 @@ export default {
         }
     },
     mounted() {
-        let url = this.base_api_url + this.base_projects_url
+        let url = this.base_api_url + this.base_projects_url + `/${this.$route.params.id}`
         this.callAPI(url)
-    },
-    computed:{
-        project(){
-            return this.projects.find(this.project => this.project.id == $route.params.id)
-        }
     }
 }
 </script>
 
 <template>
-    <div class="text-center mt-5">
-        <h1 class="text-light">Single Project id:{{$route.params.id}}</h1>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="card">
+                <div class="title">
+                    <h1 class="card-title display-6">
+                        {{ project.title }}
+                    </h1>
+                    <div class="card-body left-side">
+                        <img :src="base_api_url + '/storage/' + project.preview_image" alt="">
+                    </div>
+                    <div class="card-body right-side"></div>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 

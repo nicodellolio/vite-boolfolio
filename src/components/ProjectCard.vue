@@ -23,32 +23,37 @@ export default {
     <div class="row">
       <div v-for="project in projects.data" class="col-4 g-3">
 
-        <div class="card h-100">
-          <div class="title_box d-flex bg-gradient justify-content-between bg-secondary p-3">
 
-            <h3 class="card-title text-light fw-bolder pt-2">
-              {{ project.title }}
-            </h3>
+        <router-link class="text-decoration-none" :to="{ name: 'single-project', params: { id: project.id } }">
 
-          </div>
+          <div class="card h-100">
+            <div class="title_box d-flex bg-gradient justify-content-between bg-secondary p-3">
 
-          <div class="card-body text-secondary">
-            <h5 class="d-inline-block">Description:</h5>
-            <p class="card-text">
-              {{ project.description }}
-            </p>
-            <hr>
+              <h3 class="card-title text-light fw-bolder pt-2">
+                {{ project.title }}
+              </h3>
 
-            <div class="project-date">
-              <div class="projectStart">
-                Start Date: {{ project.project_start_date }}
-              </div>
-              <div class="projectEnd">
-                End Date: {{ project.project_end_date }}
+            </div>
+
+            <div class="card-body text-secondary">
+              <h5 class="d-inline-block">Description:</h5>
+              <p class="card-text">
+                {{ project.description }}
+              </p>
+              <hr>
+
+              <div class="project-date">
+                <div class="projectStart">
+                  Start Date: {{ project.project_start_date }}
+                </div>
+                <div class="projectEnd">
+                  End Date: {{ project.project_end_date }}
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        </router-link>
+
       </div>
     </div>
   </div>
@@ -67,8 +72,7 @@ export default {
 
         <li class="page-item">
 
-          <button style="border-radius: 100%;" type="button"
-            class="btn btn-light px-3 py-0 fs-2 mx-1 fw-bold">
+          <button style="border-radius: 100%;" type="button" class="btn btn-light px-3 py-0 fs-2 mx-1 fw-bold">
             {{ projects.current_page }}
           </button>
 
