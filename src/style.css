@@ -18,16 +18,11 @@ body {
   background-color: #590441;
 }
 
-.paginator {
-  .page-link {
-    color: #4a225e;
+.paginator-pp {
+  .btn-light {
+    color: #590441;
   }
 
-  .active>.page-link {
-    background-color: #8940AD;
-    border-color: #4a225e;
-    color: #fff;
-  }
 }
 
 .image_box {
@@ -41,7 +36,7 @@ img.jumbo-img {
   z-index: 99;
   width: 50%;
   max-width: 690px;
-  margin-bottom: 8.9vh;
+  margin-bottom: 8.2vh;
 
 }
 

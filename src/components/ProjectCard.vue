@@ -53,28 +53,37 @@ export default {
     </div>
   </div>
 
-   <div class="d-flex justify-content-center paginator-pp">
+  <div class="d-flex justify-content-center paginator-pp">
 
     <nav aria-label="Page navigation">
-      <ul class="pagination">
+      <ul class="pagination paginator">
         <li class="page-item">
-          <button style="border-radius: 100%;" class="page-link px-2 py-0 mt-3" :class="{'bg-secondary border-0 pb-1' : projects.current_page == 1}" @click="$emit('prevPage', projects.prev_page_url)" aria-label="Previous">
+          <button type="button" style="border-radius: 100%;" class="btn btn-light px-2 py-0 mt-3"
+            :class="{ 'bg-secondary border-0 pb-1': projects.current_page == 1 }"
+            @click="$emit('prevPage', projects.prev_page_url)" aria-label="Previous">
             <span aria-hidden="true">&laquo;</span>
           </button>
         </li>
 
         <li class="page-item">
-          <a style="border-radius: 100%;" class="page-link px-3 py-0 fs-2 mx-1 fw-bold" :href="projects.first_page_url">{{ projects.current_page }}</a>
+
+          <button style="border-radius: 100%;" type="button"
+            class="btn btn-light px-3 py-0 fs-2 mx-1 fw-bold">
+            {{ projects.current_page }}
+          </button>
+
         </li>
 
         <li class="page-item">
-          <button  style="border-radius: 100%;" class="page-link px-2 py-0 mt-3" :class="{'bg-secondary border-0 text-dark' : projects.current_page == projects.last_page}" @click="$emit('nextPage', projects.next_page_url)" aria-label="Next">
+          <button type="button" style="border-radius: 100%;" class="btn btn-light px-2 py-0 mt-3"
+            :class="{ 'bg-secondary border-0 text-dark': projects.current_page == projects.last_page }"
+            @click="$emit('nextPage', projects.next_page_url)" aria-label="Next">
             <span aria-hidden="true">&raquo;</span>
           </button>
         </li>
       </ul>
     </nav>
-  </div> 
+  </div>
 
 </template>
 
