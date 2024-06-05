@@ -26,7 +26,7 @@ export default {
 
         <router-link class="text-decoration-none" :to="{ name: 'SingleProject', params: { id: project.id } }">
 
-          <div class="card h-100">
+          <div class="card h-100 myCard">
             <div class="title_box d-flex bg-gradient justify-content-between bg-secondary p-3">
 
               <h3 class="card-title text-light fw-bolder pt-2">
@@ -40,25 +40,21 @@ export default {
               <p class="card-text">
                 {{ project.description }}
               </p>
-              <hr>
-
-              <div class="project-date">
-                <div class="projectStart">
-                  Start Date: {{ project.project_start_date }}
-                </div>
-                <div class="projectEnd">
-                  End Date: {{ project.project_end_date }}
-                </div>
+              
+              <div class="projectDuration">
+                <hr>
+                Project Duration: {{ project.project_duration }}
               </div>
-            </div>
           </div>
-        </router-link>
-
       </div>
+
+      </router-link>
+
     </div>
   </div>
+  </div>
 
-  <div class="d-flex justify-content-center paginator-pp">
+  <div class="d-flex justify-content-center">
 
     <nav aria-label="Page navigation">
       <ul class="pagination paginator">
@@ -91,4 +87,16 @@ export default {
 
 </template>
 
-<style lang="css"></style>
+<style lang="css">
+  .myCard{
+    position: relative;
+    padding-bottom: 50px;
+  }
+
+  .projectDuration{
+    position: absolute;
+    bottom: 0;
+    width: 90%;
+    padding-bottom: 0.5rem;
+  }
+</style>

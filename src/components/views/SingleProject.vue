@@ -1,5 +1,6 @@
 <script>
 import axios from 'axios';
+import NotFound from './NotFound.vue';
 
 export default {
     data() {
@@ -21,7 +22,7 @@ export default {
                         this.project = response.data.response
                         
                     } else {
-                        //fai una merda di 404
+                        this.$router.push({name: 'NotFound'})
                     }
                 })
                 .catch(err => {

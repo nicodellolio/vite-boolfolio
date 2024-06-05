@@ -49,10 +49,31 @@ export default {
 
 <template>
     <div>
-        <h1>All my works</h1>
-        <ProjectCard :projects="projects" @next-page="nextPage" @prev-page="prevPage" />
+        <div class="container">
+            <h1 class="projects-title">All my works</h1>
+            <div class="hr">
+                <div class="inside-hr"></div>
+            </div>
+            <ProjectCard :projects="projects" @next-page="nextPage" @prev-page="prevPage" />
+        </div>
 
     </div>
 </template>
 
-<style></style>
+<style scoped lang="css">
+
+h1{
+    text-align: end;
+    color: var(--bg-medium);
+    font-weight: 200;
+    margin-top: 2rem;
+    text-transform: uppercase;
+}
+.hr{
+    height: 2px;
+    background-color: #ffffff35;
+    border-radius: 50px;
+    margin-bottom: 0.5rem;
+}
+
+</style>

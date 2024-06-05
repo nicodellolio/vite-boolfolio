@@ -2,53 +2,18 @@
   font-family: "Titillium Web", sans-serif;
 }
 
+:root {
+  --bg-dark: rgb(28, 3, 57);
+  --bg-medium: rgba(62, 9, 121, 1);
+  --bg-light: rgba(109, 61, 163, 1)
+}
+
 body {
-  background-color: #590b4c;
-}
-
-.p-bg-lighter {
-  background-color: #b749a5;
-}
-
-.p-bg-light {
-  background-color: #99057b;
-}
-
-.p-bg-darker {
-  background-color: #590441;
-}
-
-.paginator-pp {
-  .btn-light {
-    color: #590441;
-  }
+  background: rgb(41, 7, 79);
+  background: linear-gradient(110deg, var(--bg-dark) 7%, var(--bg-medium) 34%, var(--bg-light) 75%);
+  height: 100vh;
+  background-repeat:no-repeat;
+  
 
 }
 
-.image_box {
-  gap: 2rem;
-}
-
-img.jumbo-img {
-  position: absolute;
-  bottom: 0;
-  right: 5%;
-  z-index: 99;
-  width: 50%;
-  max-width: 690px;
-  margin-bottom: 8.2vh;
-
-}
-
-.jumbotron {
-  min-height: 640px;
-  height: 80vh;
-  width: 80%;
-  max-width: 1125px;
-
-  .jumbo-title {
-    font-size: 800%;
-    font-weight: 900;
-
-  }
-}

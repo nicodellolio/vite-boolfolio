@@ -1,36 +1,63 @@
 <script>
 
+
 export default {
   name: 'AppHeader',
+  data() {
+    return {
+    }
+  }
 }
 </script>
 
 <template>
 
-  <nav class="d-flex navbar border-bottom border-1 border-secondary align-items-center justify-content-between" style="padding: 0 15%;">
+  <nav class="d-flex border-bottom border-1 border-secondary align-items-center justify-content-between"
+    style="padding: 0 15%;">
 
     <div class="nav-brand display-4 p-bg-darker px-2 my-2 border-light border border-4" style="font-weight: 900;">
-      <RouterLink class="text-decoration-none text-light" :to="{ name: 'home' }">Nico</RouterLink>
+      <RouterLink class="text-decoration-none text-light logo-name" :to="{ name: 'home' }">Nico</RouterLink>
     </div>
 
-    <ul class="list-unstyled d-flex gap-4 my-2 fw-bold fs-4 pt-3">
+    <ul class="list-unstyled d-flex gap-4 my-2 pt-3">
 
-      <li class="nav-item fw-bold">
-        <RouterLink class="text-warning nav-link" :to="{ name: 'home' }">Home</RouterLink>
+
+      <li class="nav-item d-flex gap-4 align-items-center">
+        <RouterLink class="nav-item-pp text-decoration-none" :class="{ 'active-item': $route.name == 'home' }"
+          :to="{ name: 'home' }">home</RouterLink>
+        <RouterLink class="nav-item-pp text-decoration-none" :class="{ 'active-item': $route.name == 'projects' }"
+          :to="{ name: 'projects' }">projects</RouterLink>
+        <RouterLink class="nav-item-pp text-decoration-none" :class="{ 'active-item': $route.name == 'about' }"
+          :to="{ name: 'about' }">about</RouterLink>
+        <RouterLink class="nav-item-pp text-decoration-none" :class="{ 'active-item': $route.name == 'contacts' }"
+          :to="{ name: 'contacts' }">contacts</RouterLink>
       </li>
-      <li class="nav-item">
-        <RouterLink class="text-success nav-link fw-bolder" :to="{ name: 'projects' }">Projects</RouterLink>
-      </li>
-      <li class="nav-item">
-        <RouterLink class="text-warning nav-link" :to="{ name: 'about' }">About</RouterLink>
-      </li>
-      <li class="nav-item">
-        <RouterLink class="text-warning nav-link" :to="{ name: 'contacts' }">Contacts</RouterLink>
-      </li>
-      
+
     </ul>
   </nav>
 
 </template>
 
-<style></style>
+<style scoped lang="css">
+nav {
+  background: rgba(255, 255, 255, 0.038);
+}
+
+.logo-name {
+  opacity: 0.8;
+}
+
+.nav-item-pp {
+  color: #9F84BC;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 1.25rem;
+}
+
+.active-item {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #d5b1fb;
+}
+
+</style>
