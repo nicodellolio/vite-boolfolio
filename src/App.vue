@@ -19,4 +19,5 @@ export default {
 
 </template>
 
-<style></style>
+<style>
+</style>

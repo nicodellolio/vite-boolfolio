@@ -12,12 +12,12 @@ export default {
 
 <template>
 
-  <nav class="d-flex border-bottom border-1 border-secondary align-items-center justify-content-between"
+  <nav class="d-flex border-bottom border-1 border-secondary align-items-center justify-content-end"
     style="padding: 0 15%;">
 
-    <div class="nav-brand display-4 p-bg-darker px-2 my-2 border-light border border-4" style="font-weight: 900;">
-      <RouterLink class="text-decoration-none text-light logo-name" :to="{ name: 'home' }">Nico</RouterLink>
-    </div>
+    <!-- <div class="nav-brand display-4 p-bg-darker px-2 my-2" style="font-weight: 900;">
+      <RouterLink class="text-decoration-none text-light logo-name" :to="{ name: 'home' }"><i class="fa fa-home" aria-hidden="true"></i></RouterLink>
+    </div> -->
 
     <ul class="list-unstyled d-flex gap-4 my-2 pt-3">
 
@@ -41,6 +41,13 @@ export default {
 <style scoped lang="css">
 nav {
   background: rgba(255, 255, 255, 0.038);
+
+  > *{
+    margin: 0 4rem;
+    padding: 1rem 0;
+  }
+
+  
 }
 
 .logo-name {

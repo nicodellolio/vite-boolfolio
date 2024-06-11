@@ -6,27 +6,33 @@ export default {
 
 <template>
     <div class="container">
-        <h1>About Me</h1>
+        <h1 class="page_title">About Me</h1>
+        <div class="hr"></div>
+
+
+
+        <div class="resume-box">
+            <router-link to="/resume">
+                <img class="img-fluid mt-3 p-3" src="/Fullstack_Resume_EN.png" alt="">
+            </router-link>
+        </div>
     </div>
-    <div class="hr"></div>
 </template>
 
 <style scoped lang="css">
-
-h1{
-    text-align: end;
-    color: var(--bg-medium);
-    font-weight: 200;
-    margin-top: 2rem;
-    text-transform: uppercase;
+.resume-box{
+    width: fit-content;
 }
-.hr{
-    height: 2px;
-    background-color: #ffffff35;
-    border-radius: 50px;
-    margin-bottom: 0.5rem;
-    
+img{
+    width: 200px;
+    opacity: 0.8;
 }
-
-
+.fa-expand{
+    color: var(--bg-dark);
+    position: absolute;
+    font-size: 4rem;
+    z-index: 10;
+    top: 23%;
+    left: 27%;
+}
 </style>
