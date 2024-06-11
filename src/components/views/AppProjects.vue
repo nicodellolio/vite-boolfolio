@@ -41,8 +41,6 @@ export default {
     mounted() {
         let url = this.base_api_url + this.base_projects_url
         this.callAPI(url)
-
-
     }
 };
 </script>
@@ -50,10 +48,8 @@ export default {
 <template>
     <div>
         <div class="container">
-            <h1 class="projects-title">All my works</h1>
-            <div class="hr">
-                <div class="inside-hr"></div>
-            </div>
+            <h1  class="page_title">All my works</h1>
+            <div class="hr"></div>
             <ProjectCard :projects="projects" @next-page="nextPage" @prev-page="prevPage" />
         </div>
 
@@ -62,18 +58,6 @@ export default {
 
 <style scoped lang="css">
 
-h1{
-    text-align: end;
-    color: var(--bg-medium);
-    font-weight: 200;
-    margin-top: 2rem;
-    text-transform: uppercase;
-}
-.hr{
-    height: 2px;
-    background-color: #ffffff35;
-    border-radius: 50px;
-    margin-bottom: 0.5rem;
-}
+
 
 </style>

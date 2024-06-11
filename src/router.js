@@ -7,6 +7,7 @@ import SingleProject from './components/views/SingleProject.vue';
 import AppAbout from './components/views/AppAbout.vue';
 import AppContacts from './components/views/AppContacts.vue';
 import NotFound from './components/views/NotFound.vue';
+import AppResume from './components/views/AppResume.vue'
 
 
 const router = createRouter({
@@ -44,7 +45,11 @@ const router = createRouter({
             name: 'NotFound',
             component: NotFound
         },
-
+        {
+            path: '/resume',
+            name: 'resume',
+            component: AppResume
+        }
     ]
 })
 

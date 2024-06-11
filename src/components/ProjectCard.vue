@@ -27,34 +27,35 @@ export default {
         <router-link class="text-decoration-none" :to="{ name: 'SingleProject', params: { id: project.id } }">
 
           <div class="card h-100 myCard">
-            <div class="title_box d-flex bg-gradient justify-content-between bg-secondary p-3">
+            <div class="title_box d-flex text-center align-items-center text-uppercase justify-content-center py-3">
 
-              <h3 class="card-title text-light fw-bolder pt-2">
+              <h3 class="card-title pt-2">
                 {{ project.title }}
               </h3>
 
             </div>
 
-            <div class="card-body text-secondary">
+            <div class="card-body">
               <h5 class="d-inline-block">Description:</h5>
               <p class="card-text">
                 {{ project.description }}
               </p>
-              
+
               <div class="projectDuration">
                 <hr>
                 Project Duration: {{ project.project_duration }}
               </div>
+            </div>
           </div>
+
+        </router-link>
+
       </div>
-
-      </router-link>
-
     </div>
   </div>
-  </div>
+  
 
-  <div class="d-flex justify-content-center">
+  <div class="d-flex justify-content-center container navigator-div">
 
     <nav aria-label="Page navigation">
       <ul class="pagination paginator">
@@ -87,16 +88,38 @@ export default {
 
 </template>
 
-<style lang="css">
-  .myCard{
-    position: relative;
-    padding-bottom: 50px;
-  }
+<style lang="css" scoped>
+.myCard {
+  font-family: "Quicksand", sans-serif;
+  position: relative;
+  padding-bottom: 50px;
+  background-color: #ffffff21;
+  background-image: var(--bs-gradient);   
+  color: #ffffffa7;
+  border: 1px inset #ffffff55;
 
-  .projectDuration{
-    position: absolute;
-    bottom: 0;
-    width: 90%;
-    padding-bottom: 0.5rem;
+  .title_box {
+    background-color: var(--bg-medium);
+    background-image: var(--bs-gradient);
+    height: 100px;
+    color: #ffffffba;
+
+    .card-title{
+      font-weight: 100;
+    }
   }
+}
+
+.projectDuration {
+  position: absolute;
+  bottom: 0;
+  width: 90%;
+  padding-bottom: 0.5rem;
+}
+
+.navigator-div{
+  position: absolute;
+  bottom: 1rem;
+  /* width: 84%; */
+}
 </style>
