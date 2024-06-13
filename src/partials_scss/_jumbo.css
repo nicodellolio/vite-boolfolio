@@ -1,0 +1,142 @@
+
+
+.container {
+    height: calc((100vh - 48px) - 82px);
+}
+
+.icons {
+    font-size: 4rem;
+    gap: 1rem;
+    max-width: 6rem;
+    margin-left: -5rem;
+    margin-top: 2rem;
+
+    >i {
+        color: var(--bg-light);
+    }
+
+    ;
+
+    >i:hover {
+        scale: 1.4;
+        color: #fff;
+    }
+}
+
+.paginator-pp {
+    .btn-light {
+        color: #590441;
+    }
+
+}
+
+.image_box {
+    gap: 2rem;
+}
+
+.jumbo-pp-text {
+    font-weight: 100;
+    color: #ffffff;
+    margin-bottom: 3rem;
+}
+
+img.jumbo-img {
+    position: absolute;
+    bottom: 0;
+    right: 5%;
+    z-index: 99;
+    width: 50%;
+    max-width: 690px;
+    /* margin-bottom: 8.2vh; */
+
+}
+
+.jumbotron {
+    min-height: 640px;
+    width: 80%;
+    max-width: 1125px;
+
+
+
+    .jumbo-title {
+        font-size: 600%;
+        font-weight: 900;
+        color: #ffffff;
+        width: 60%;
+    }
+
+    .jumbo-title.second {
+        margin-top: -3rem;
+    }
+
+}
+
+.download_cv_box {
+    filter: drop-shadow(0 0 1rem rgba(223, 10, 216, 0.788));
+    text-transform: uppercase;
+    font-weight: 100;
+    text-align: center;
+    align-items: center;
+    padding-top: 1rem;
+    border-radius: 100%;
+    background-color: rgb(176, 9, 176);
+    width: 150px;
+    aspect-ratio: 1;
+    position: absolute;
+    left: 35%;
+    bottom: 10%;
+    display: flex;
+    opacity: 0.75;
+
+    .download_cv {
+        color: #fff;
+        text-decoration: none;
+        font-size: 2rem;
+        margin-bottom: 0.75rem;
+
+        i {
+            font-size: 3rem;
+        }
+    }
+}
+
+.download_cv_box:hover {
+    scale: 1.15;
+    opacity: 1;
+}
+
+.arrow_box {
+    z-index: 99;
+}
+
+#latest-projects {
+    height: 1000px;
+    width: 80%;
+    margin: auto;
+    background-color: var(--bg-dark);
+    border-radius: 20px;
+    padding: 2rem;
+    z-index: 999;
+    /* background: linear-gradient(310deg, rgba(28, 3, 57, 1) 11%, rgba(62, 9, 121, 1) 46%, rgba(109, 61, 163, 1) 100%); */
+}
+
+a {
+    text-decoration: none;
+}
+
+h6.link-to-latest {
+    font-weight: 100;
+    position: relative;
+    right: 1rem;
+    bottom: 11%;
+    color: rgba(243, 243, 243, 0.536);
+    font-size: 1.5rem;
+}
+
+h6:hover {
+    color: #fff;
+}
+
+.all-my-works {
+    margin-top: 3rem;
+}

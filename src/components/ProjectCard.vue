@@ -1,19 +1,19 @@
 <script>
-import axios from 'axios';
-
+import { state } from '../state';
 
 export default {
   name: 'ProjectCard',
 
-  props: {
-    projects: Object,
-  },
-
-  methods: {
+  data() {
+    return {
+      state
+    }
   },
   mounted() {
-
+    let url = state.base_api_url + state.base_projects_url
+    state.callAPI(url)
   }
+
 }
 </script>
 
@@ -21,7 +21,7 @@ export default {
 
   <div class="container mb-3">
     <div class="row">
-      <div v-for="project in projects.data" class="col-4 g-3">
+      <div v-for="project in state.projects.data" class="col-4 g-3">
 
 
         <router-link class="text-decoration-none" :to="{ name: 'SingleProject', params: { id: project.id } }">
@@ -53,7 +53,7 @@ export default {
       </div>
     </div>
   </div>
-  
+
 
   <div class="d-flex justify-content-center container navigator-div">
 
@@ -61,8 +61,8 @@ export default {
       <ul class="pagination paginator">
         <li class="page-item">
           <button type="button" style="border-radius: 100%;" class="btn btn-light px-2 py-0 mt-3"
-            :class="{ 'bg-secondary border-0 pb-1': projects.current_page == 1 }"
-            @click="$emit('prevPage', projects.prev_page_url)" aria-label="Previous">
+            :class="{ 'bg-secondary border-0 pb-1': state.projects.current_page == 1 }"
+            @click="state.prevPage(state.projects.prev_page_url)" aria-label="Previous">
             <span aria-hidden="true">&laquo;</span>
           </button>
         </li>
@@ -70,15 +70,15 @@ export default {
         <li class="page-item">
 
           <button style="border-radius: 100%;" type="button" class="btn btn-light px-3 py-0 fs-2 mx-1 fw-bold">
-            {{ projects.current_page }}
+            {{ state.projects.current_page }}
           </button>
 
         </li>
 
         <li class="page-item">
           <button type="button" style="border-radius: 100%;" class="btn btn-light px-2 py-0 mt-3"
-            :class="{ 'bg-secondary border-0 text-dark': projects.current_page == projects.last_page }"
-            @click="$emit('nextPage', projects.next_page_url)" aria-label="Next">
+            :class="{ 'bg-secondary border-0 text-dark': state.projects.current_page == state.projects.last_page }"
+            @click="state.nextPage(state.projects.next_page_url)" aria-label="Next">
             <span aria-hidden="true">&raquo;</span>
           </button>
         </li>
@@ -89,12 +89,14 @@ export default {
 </template>
 
 <style lang="css" scoped>
+
+
 .myCard {
   font-family: "Quicksand", sans-serif;
   position: relative;
   padding-bottom: 50px;
   background-color: #ffffff21;
-  background-image: var(--bs-gradient);   
+  background-image: var(--bs-gradient);
   color: #ffffffa7;
   border: 1px inset #ffffff55;
 
@@ -104,7 +106,7 @@ export default {
     height: 100px;
     color: #ffffffba;
 
-    .card-title{
+    .card-title {
       font-weight: 100;
     }
   }
@@ -117,7 +119,7 @@ export default {
   padding-bottom: 0.5rem;
 }
 
-.navigator-div{
+.navigator-div {
   position: absolute;
   bottom: 1rem;
   /* width: 84%; */

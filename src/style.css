@@ -2,6 +2,7 @@
   font-family: "Titillium Web", sans-serif;
 }
 
+
 :root {
   --bg-dark: rgb(28, 3, 57);
   --bg-medium: rgba(62, 9, 121, 1);
@@ -11,9 +12,11 @@
 body {
   background: rgb(41, 7, 79);
   background: linear-gradient(155deg, var(--bg-dark) 7%, var(--bg-medium) 34%, var(--bg-light) 75%);
-  background-repeat:no-repeat;
-  
+  background-repeat: no-repeat;
+  min-height: 100vh;
+
 }
+
 .page_title{
   text-align: end;
   color: var(--bg-light);
@@ -27,5 +30,32 @@ body {
   background-color: #ffffff35;
   border-radius: 50px;
   margin-bottom: 0.5rem;
+}
+
+.myCard {
+  font-family: "Quicksand", sans-serif;
+  position: relative;
+  padding-bottom: 50px;
+  background-color: #ffffff21;
+  background-image: var(--bs-gradient);
+  color: #ffffffa7;
+  border: 1px inset #ffffff55;
+
+  .title_box {
+    background-color: var(--bg-medium);
+    background-image: var(--bs-gradient);
+    height: 100px;
+    color: #ffffffba;
+
+    .card-title {
+      font-weight: 100;
+    }
+  }
+  .projectDuration {
+    position: absolute;
+    bottom: 0;
+    width: 90%;
+    padding-bottom: 0.5rem;
+  }
 }
 
