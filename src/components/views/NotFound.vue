@@ -5,8 +5,6 @@ export default {
     data() {
         return {
             error_message: 'I couldn\'t find what you\'re looking for',
-            chatLeft: 'Hei, you guys know this guy?',
-            chatRight: 'Yeah, no, no idea'
         }
     }
 }

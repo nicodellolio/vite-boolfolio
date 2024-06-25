@@ -111,6 +111,12 @@ export default {
     }
   }
 }
+.myCard:hover{
+  cursor: pointer;
+  filter: brightness(0.8);
+  filter: drop-shadow(15px 15px 7px #f8f8f87a);
+
+}
 
 .projectDuration {
   position: absolute;

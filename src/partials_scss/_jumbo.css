@@ -45,9 +45,8 @@ img.jumbo-img {
     bottom: 0;
     right: 5%;
     z-index: 99;
-    width: 50%;
+    width: 35%;
     max-width: 690px;
-    /* margin-bottom: 8.2vh; */
 
 }
 
@@ -80,7 +79,7 @@ img.jumbo-img {
     padding-top: 1rem;
     border-radius: 100%;
     background-color: rgb(176, 9, 176);
-    width: 150px;
+    width: 160px;
     aspect-ratio: 1;
     position: absolute;
     left: 35%;
