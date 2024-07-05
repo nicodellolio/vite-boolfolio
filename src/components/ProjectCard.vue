@@ -89,8 +89,6 @@ export default {
 </template>
 
 <style lang="css" scoped>
-
-
 .myCard {
   font-family: "Quicksand", sans-serif;
   position: relative;
@@ -111,7 +109,8 @@ export default {
     }
   }
 }
-.myCard:hover{
+
+.myCard:hover {
   cursor: pointer;
   filter: brightness(0.8);
   filter: drop-shadow(15px 15px 7px #f8f8f87a);
@@ -129,5 +128,12 @@ export default {
   position: absolute;
   bottom: 1rem;
   /* width: 84%; */
+}
+
+.projectDuration {
+  position: absolute;
+  bottom: 0;
+  width: 90%;
+  padding-bottom: 0.5rem;
 }
 </style>

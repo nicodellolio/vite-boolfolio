@@ -22,7 +22,7 @@ export default {
                         this.project = response.data.response
 
                     } else {
-                        
+
                     }
                 })
                 .catch(err => {
@@ -85,21 +85,32 @@ export default {
                         </div>
                     </div>
 
-                    <div class="card-footer text-light d-flex justify-content-evenly align-items-center">
-                        <a target="_blank" class="btn btn-drounded disabled text-decoration-none text-light p-bg-light px-3 py-2 fs-5"
-                            :href="project.link_to_project_view">
-                            Have a better look to the website
+                    <div class="card-footer text-light d-flex justify-content-between align-items-center px-4">
+                        <a class="btn border text-decoration-none text-light px-3 py-2 fs-5" style="background-color: var(--bg-medium);"
+                            href="javascript:history.back()">Go Back
                         </a>
-                        <a target="_blank" class="btn btn-github text-decoration-none text-light p-bg-light px-3 py-1 fs-5"
-                            :href="project.link_to_source_code">
-                            <img src="/github-6980894_1280.png" alt="Github link">
-                            View Source Code
-                        </a>
+
+                        <div class="project-buttons d-flex gap-3">
+
+                            <a target="_blank"
+                                class="btn btn-drounded disabled text-decoration-none text-light p-bg-light px-3 py-2 fs-5"
+                                :href="project.link_to_project_view">
+                                Have a better look to the website
+                            </a>
+                            <a target="_blank"
+                                class="btn btn-github text-decoration-none text-light p-bg-light px-3 py-1 fs-5"
+                                :href="project.link_to_source_code">
+                                <img src="/github-6980894_1280.png" alt="Github link">
+                                View Source Code
+                            </a>
+                        </div>
+
                     </div>
 
                 </div>
             </div>
         </div>
+
     </div>
 </template>
 
@@ -144,6 +155,7 @@ export default {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+
     img {
         width: 40px;
     }

@@ -26,4 +26,6 @@ export const state = reactive({
     prevPage(url) {
         this.callAPI(url)
     }
+
+    
 })

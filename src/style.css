@@ -4,8 +4,8 @@
 
 
 :root {
-  --bg-dark: rgb(28, 3, 57);
-  --bg-medium: rgba(62, 9, 121, 1);
+  --bg-dark: #1c0339;
+  --bg-medium: #3e0979;
   --bg-light: rgba(109, 61, 163, 1)
 }
 
@@ -51,11 +51,6 @@ body {
       font-weight: 100;
     }
   }
-  .projectDuration {
-    position: absolute;
-    bottom: 0;
-    width: 90%;
-    padding-bottom: 0.5rem;
-  }
+
 }
 

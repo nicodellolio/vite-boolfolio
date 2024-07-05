@@ -13,46 +13,48 @@ export default {
     let url = state.base_api_url + state.base_projects_url
     state.callAPI(url)
 
-    let TxtType = function (el, toRotate, period) {
-      this.toRotate = toRotate;
-      this.el = el;
-      this.loopNum = 0;
-      this.period = parseInt(period, 10) || 2000;
-      this.txt = '';
-      this.tick();
-      this.isDeleting = false;
-    };
-
-    TxtType.prototype.tick = function () {
-      let i = this.loopNum % this.toRotate.length;
-      let fullTxt = this.toRotate[i];
-
-      if (this.isDeleting) {
-        this.txt = fullTxt.substring(0, this.txt.length - 1);
-      } else {
-        this.txt = fullTxt.substring(0, this.txt.length + 1);
-      }
-
-      this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
-
-      let that = this;
-      let delta = 200 - Math.random() * 100;
-
-      if (this.isDeleting) { delta /= 2; }
-
-      if (!this.isDeleting && this.txt === fullTxt) {
-        delta = this.period;
-        this.isDeleting = true;
-      } else if (this.isDeleting && this.txt === '') {
+    class TxtType {
+      constructor(el, toRotate, period) {
+        this.toRotate = toRotate;
+        this.el = el;
+        this.loopNum = 0;
+        this.period = parseInt(period, 10) || 2000;
+        this.txt = '';
+        this.tick();
         this.isDeleting = false;
-        this.loopNum++;
-        delta = 500;
       }
+      tick() {
+        let i = this.loopNum % this.toRotate.length;
+        let fullTxt = this.toRotate[i];
 
-      setTimeout(function () {
-        that.tick();
-      }, delta);
+        if (this.isDeleting) {
+          this.txt = fullTxt.substring(0, this.txt.length - 1);
+        } else {
+          this.txt = fullTxt.substring(0, this.txt.length + 1);
+        }
+
+        this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
+
+        let that = this;
+        let delta = 200 - Math.random() * 100;
+
+        if (this.isDeleting) { delta /= 2; }
+
+        if (!this.isDeleting && this.txt === fullTxt) {
+          delta = this.period;
+          this.isDeleting = true;
+        } else if (this.isDeleting && this.txt === '') {
+          this.isDeleting = false;
+          this.loopNum++;
+          delta = 500;
+        }
+
+        setTimeout(function () {
+          that.tick();
+        }, delta);
+      }
     };
+
 
     window.onload = function () {
       let elements = document.getElementsByClassName('typewrite');
@@ -139,9 +141,6 @@ export default {
         <h6 class="link-to-latest">Take a look to my latest project</h6>
       </a>
 
-
-
-
       <div class="download_cv_box">
         <a class="download_cv" target="_blank" download=""
           :href="state.base_api_url + '/storage/uploads/' + 'resume_portfolio.pdf'">
@@ -155,13 +154,12 @@ export default {
   </div>
 
   <div id="latest-projects" class="mb-5">
-    <div class="row">
-      <div v-for="project in state.projects.data" class="col-4 g-3">
-
+    <div class="row my-row d-flex flex-row flex-nowrap h-100 overflow-scroll p-5">
+      <div v-for="project in state.projects.data" class="col-12">
 
         <router-link class="text-decoration-none" :to="{ name: 'SingleProject', params: { id: project.id } }">
 
-          <div class="card h-100 myCard">
+          <div class="card h-100 myCard overflow-scroll">
             <div class="title_box d-flex text-center align-items-center text-uppercase justify-content-center py-3">
 
               <h3 class="card-title pt-2">
@@ -170,14 +168,18 @@ export default {
 
             </div>
 
+            <img :src="state.base_api_url + '/storage/' + project.preview_image" alt="" class="card-img-top w-100">
+
+
             <div class="card-body">
-              <h5 class="d-inline-block">Description:</h5>
-              <p class="card-text">
-                {{ project.description }}
-              </p>
+              <div class="description">
+                <h5 class="d-inline-block fs-2">Description:</h5>
+                <p class="card-text">
+                  {{ project.description }}
+                </p>
+              </div>
 
               <div class="projectDuration">
-                <hr>
                 Project Duration: {{ project.project_duration }}
               </div>
             </div>
