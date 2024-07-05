@@ -22,7 +22,7 @@ export default {
                         this.project = response.data.response
 
                     } else {
-                        this.$router.push({ name: 'NotFound' })
+                        
                     }
                 })
                 .catch(err => {

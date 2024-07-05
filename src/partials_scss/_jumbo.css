@@ -61,7 +61,7 @@ img.jumbo-img {
         font-size: 600%;
         font-weight: 900;
         color: #ffffff;
-        width: 60%;
+        /* width: 60%; */
     }
 
     .jumbo-title.second {
@@ -116,7 +116,6 @@ img.jumbo-img {
     border-radius: 20px;
     padding: 2rem;
     z-index: 999;
-    /* background: linear-gradient(310deg, rgba(28, 3, 57, 1) 11%, rgba(62, 9, 121, 1) 46%, rgba(109, 61, 163, 1) 100%); */
 }
 
 a {
@@ -127,7 +126,7 @@ h6.link-to-latest {
     font-weight: 100;
     position: relative;
     right: 1rem;
-    bottom: 11%;
+    bottom: 10%;
     color: rgba(243, 243, 243, 0.536);
     font-size: 1.5rem;
 }
@@ -136,6 +135,18 @@ h6:hover {
     color: #fff;
 }
 
+.scroll-prompt-arrow-container{
+    margin-top: 80%;
+}
+
 .all-my-works {
     margin-top: 3rem;
+}
+
+.typewrite{
+    display: block;
+    color: var(--bg-light);
+    width: 100%;
+    height: 150px;
+    font-weight: 800;
 }
