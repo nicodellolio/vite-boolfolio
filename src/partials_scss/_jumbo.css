@@ -154,18 +154,48 @@ h6:hover {
     padding-bottom: 0.5rem;
 }
 
-.myCard{
+.myCard {
     color: rgb(255, 255, 255);
+
     .card-body {
         position: sticky;
         bottom: -4rem;
         font-size: 1.5rem;
         padding: 3rem 2rem 2rem;
-        background: rgb(109,61,163);
-        background: linear-gradient(0deg, rgba(109,61,163,1) 0%, rgba(109,61,163,1) 23%, rgba(132,91,177,0.9009978991596639) 47%, rgba(161,129,195,0.7497373949579832) 83%, rgba(255,255,255,0) 100%);
-    
+        background: rgb(109, 61, 163);
+        background: linear-gradient(0deg, rgba(109, 61, 163, 1) 0%, rgba(109, 61, 163, 1) 23%, rgba(132, 91, 177, 0.9009978991596639) 47%, rgba(161, 129, 195, 0.7497373949579832) 83%, rgba(255, 255, 255, 0) 100%);
+
         .description p {
             margin-bottom: 3rem;
         }
     }
+}
+
+
+.card.all-my-works {
+    align-items: center;
+    width: 100%;
+    margin: auto;
+    position: relative;
+    top: 30%;
+
+
+    h1 {
+        color: var(--bg-lighter);
+        font-weight: 700;
+        font-size: 5rem;
+        display: inline-block;    
+    }
+    span{
+        font-size: 7rem;
+        font-weight: 600;
+        margin-left: 1.5rem;
+        color:var(--bg-light);
+    }
+
+    h1:hover{
+        color: var(--bg-light);
+    }
+
+
 }

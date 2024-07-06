@@ -4,7 +4,18 @@ export default {
     data() {
         return {
             technologies: [
-                'Laravel', 'MySQL', 'PHP', 'Vite', 'VueJS', 'Javascript', 'CSS', 'HTML'
+                "devicon-css3-plain",
+                "devicon-bootstrap-plain",
+                "devicon-vuejs-plain-wordmark",
+                "devicon-mysql-original",
+                "devicon-laravel-original",
+                "devicon-php-plain",
+                "devicon-codepen-original",
+                "devicon-git-plain",
+                "devicon-vscode-plain",
+                "devicon-javascript-plain",
+                "devicon-npm-original-wordmark",
+                "devicon-vitejs-plain"
             ]
         }
     }
@@ -19,38 +30,26 @@ export default {
 
         <div class="about-me d-flex">
 
-            <div class="svgs">
-
-
-            </div>
-
-
-            <div class="resume-box mx-auto align-self-center">
-                <router-link to="/resume">
-                    <img class="" src="/Fullstack_Resume_EN.png" alt="">
-                </router-link>
-            </div>
 
             <div class="right-side">
 
                 <p class="all-about-me">
-                    During my experience as video editor, I realized my true passion lies in the world of coding and
-                    software
-                    development. Inspired by my experience in visual storytelling and post-production,
-                    I now apply my creative problem-solving skills to deliver innovative software solutions. I'm excited
-                    to
-                    combine my technical aptitude and eye for detail to create stunning user experiences in my current
-                    role.
+                    I'm a creative soul who loves coding and travel. I spent a year in Australia working as a video
+                    editor, where I discovered my passion for programming. Now, I'm diving into the tech world, blending
+                    my creative background with my new coding skills. I'm all about tackling challenges and exploring
+                    new places along the way.
                 </p>
 
                 <div class="hr" style="margin-top: 4rem;"></div>
 
-                <div class="technologies">
-                    <ul class="list-unstyled">
-                        <li class="list-item" v-for="technology in technologies">{{ technology }}</li>
-                    </ul>
-                </div>
+                <div class="slider">
+                    <div class="slide-track">
 
+                        <div v-for="technology in technologies" class="slide">
+                            <i :class="technology"></i>
+                        </div>
+                    </div>
+                </div>
 
             </div>
 
@@ -58,33 +57,8 @@ export default {
     </div>
 </template>
 
-<style scoped lang="css">
-.resume-box {
-    width: fit-content;
-}
-
-img {
-    width: 200px;
-    opacity: 0.9;
-}
-
-img:hover {
-    scale: 1.15;
-    opacity: 1;
-}
-
-
-.fa-expand {
-    color: var(--bg-dark);
-    position: absolute;
-    font-size: 4rem;
-    z-index: 10;
-    top: 23%;
-    left: 27%;
-}
-
+<style scoped lang="scss">
 .right-side {
-    width: 41%;
 
     .all-about-me {
         margin: 3rem 0 4rem;
@@ -98,15 +72,6 @@ img:hover {
 
 }
 
-ul{
-    margin-top: 2rem;
-    .list-item {
-        color: #ffffffbc;
-        text-transform: uppercase;
-        font-size: 2rem;
-        
-        
-    }
-}
+@import '../../partials_scss/_carousel.scss';
 
 </style>

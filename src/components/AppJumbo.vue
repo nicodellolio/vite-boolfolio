@@ -1,71 +1,27 @@
 <script>
 import { state } from '../state';
+import AppLatestProjects from './AppLatestProjects.vue';
+import AppAbout from './views/AppAbout.vue';
 
 export default {
   name: 'AppJumbo',
+
+  components: {
+    AppLatestProjects,
+    AppAbout
+  },
 
   data() {
     return {
       state
     }
   },
+  methods: {
+
+  },
   mounted() {
     let url = state.base_api_url + state.base_projects_url
-    state.callAPI(url)
-
-    class TxtType {
-      constructor(el, toRotate, period) {
-        this.toRotate = toRotate;
-        this.el = el;
-        this.loopNum = 0;
-        this.period = parseInt(period, 10) || 2000;
-        this.txt = '';
-        this.tick();
-        this.isDeleting = false;
-      }
-      tick() {
-        let i = this.loopNum % this.toRotate.length;
-        let fullTxt = this.toRotate[i];
-
-        if (this.isDeleting) {
-          this.txt = fullTxt.substring(0, this.txt.length - 1);
-        } else {
-          this.txt = fullTxt.substring(0, this.txt.length + 1);
-        }
-
-        this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
-
-        let that = this;
-        let delta = 200 - Math.random() * 100;
-
-        if (this.isDeleting) { delta /= 2; }
-
-        if (!this.isDeleting && this.txt === fullTxt) {
-          delta = this.period;
-          this.isDeleting = true;
-        } else if (this.isDeleting && this.txt === '') {
-          this.isDeleting = false;
-          this.loopNum++;
-          delta = 500;
-        }
-
-        setTimeout(function () {
-          that.tick();
-        }, delta);
-      }
-    };
-
-
-    window.onload = function () {
-      let elements = document.getElementsByClassName('typewrite');
-      for (let i = 0; i < elements.length; i++) {
-        let toRotate = elements[i].getAttribute('data-type');
-        let period = elements[i].getAttribute('data-period');
-        if (toRotate) {
-          new TxtType(elements[i], JSON.parse(toRotate), period);
-        }
-      }
-    };
+    state.callAPI(url);
   }
 
 }
@@ -153,45 +109,11 @@ export default {
     <img class="jumbo-img" :src="state.base_api_url + '/storage/uploads/' + 'jumbo.png'" alt="">
   </div>
 
-  <div id="latest-projects" class="mb-5">
-    <div class="row my-row d-flex flex-row flex-nowrap h-100 overflow-scroll p-5">
-      <div v-for="project in state.projects.data" class="col-12">
+  <AppLatestProjects />
 
-        <router-link class="text-decoration-none" :to="{ name: 'SingleProject', params: { id: project.id } }">
-
-          <div class="card h-100 myCard overflow-scroll">
-            <div class="title_box d-flex text-center align-items-center text-uppercase justify-content-center py-3">
-
-              <h3 class="card-title pt-2">
-                {{ project.title }}
-              </h3>
-
-            </div>
-
-            <img :src="state.base_api_url + '/storage/' + project.preview_image" alt="" class="card-img-top w-100">
+  <AppAbout />
 
 
-            <div class="card-body">
-              <div class="description">
-                <h5 class="d-inline-block fs-2">Description:</h5>
-                <p class="card-text">
-                  {{ project.description }}
-                </p>
-              </div>
-
-              <div class="projectDuration">
-                Project Duration: {{ project.project_duration }}
-              </div>
-            </div>
-          </div>
-
-        </router-link>
-
-      </div>
-    </div>
-    <RouterLink class="text-dark btn all-my-works btn-warning fw-normal" :to="{ name: 'projects' }">All my works
-    </RouterLink>
-  </div>
 
 </template>
 

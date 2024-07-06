@@ -6,7 +6,8 @@
 :root {
   --bg-dark: #1c0339;
   --bg-medium: #3e0979;
-  --bg-light: rgba(109, 61, 163, 1)
+  --bg-light: #6d3da3;
+  --bg-lighter: #b083e2;
 }
 
 body {
