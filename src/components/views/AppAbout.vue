@@ -28,10 +28,17 @@ export default {
         <h1 class="page_title">About Me</h1>
         <div class="hr"></div>
 
+        <h1 class="text-end a-bit-about-me">A bit about me</h1>
+
         <div class="about-me d-flex">
 
 
+            <div class="left-side">
+                <p>The technologies I'm fluent in &downarrow;</p>
+            </div>
+
             <div class="right-side">
+
 
                 <p class="all-about-me">
                     I'm a creative soul who loves coding and travel. I spent a year in Australia working as a video
@@ -40,25 +47,44 @@ export default {
                     new places along the way.
                 </p>
 
-                <div class="hr" style="margin-top: 4rem;"></div>
-
-                <div class="slider">
-                    <div class="slide-track">
-
-                        <div v-for="technology in technologies" class="slide">
-                            <i :class="technology"></i>
-                        </div>
-                    </div>
-                </div>
 
             </div>
 
+
+        </div>
+        <div class="slider">
+            <div class="slide-track">
+
+                <div v-for="technology in technologies" class="slide">
+                    <i :class="technology"></i>
+                </div>
+            </div>
         </div>
     </div>
 </template>
 
 <style scoped lang="scss">
+.about-me {
+    display: flex;
+
+    .left-side {
+        display: flex;
+        align-items: end;
+        width: 50%;
+
+        p{
+            font-size: 1.5rem;
+            transform: rotate(-20deg);
+            color: #fff;
+            font-weight: 600;
+        }
+    }
+
+}
+
 .right-side {
+    display: flex;
+    flex-direction: column;
 
     .all-about-me {
         margin: 3rem 0 4rem;
@@ -68,10 +94,21 @@ export default {
         color: #ffffffbc;
         font-weight: 100;
         font-size: 1.5rem;
+        width: 60%;
+        align-self: flex-end;
     }
 
 }
 
-@import '../../partials_scss/_carousel.scss';
+.a-bit-about-me {
+    font-size: 8rem;
+    margin-top: 5rem;
+    font-weight: 800;
+    text-transform: lowercase;
+    color: var(--bg-lighter)
+}
 
+;
+
+@import '../../partials_scss/_carousel.scss';
 </style>
