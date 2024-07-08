@@ -1,5 +1,6 @@
 import { reactive } from "vue";
 import axios from "axios";
+import Aos from "aos";
 
 export const state = reactive({
 
@@ -25,7 +26,7 @@ export const state = reactive({
     },
     prevPage(url) {
         this.callAPI(url)
-    }
+    },
 
-    
+
 })

@@ -12,6 +12,10 @@ export default {
   mounted() {
     let url = state.base_api_url + state.base_projects_url
     state.callAPI(url)
+
+    AOS.init({
+      duration: 1200,
+    })
   }
 
 }
@@ -21,7 +25,7 @@ export default {
 
   <div class="container mb-3">
     <div class="row">
-      <div v-for="project in state.projects.data" class="col-4 g-3">
+      <div v-for="project in state.projects.data" class="col-4 g-3" >
 
 
         <router-link class="text-decoration-none" :to="{ name: 'SingleProject', params: { id: project.id } }">

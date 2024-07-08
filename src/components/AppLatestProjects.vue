@@ -69,6 +69,10 @@ export default {
     state.callAPI(url);
 
     this.initializeTypewriter();
+
+    AOS.init({
+      duration: 1200,
+    })
   }
 
 }
@@ -77,7 +81,7 @@ export default {
 
 <template>
   
-  <div id="latest-projects" class="mb-5">
+  <div id="latest-projects" class="mb-5" data-aos="fade-right">
     <div class="row my-row d-flex flex-row flex-nowrap h-100 overflow-scroll p-5">
       <div v-for="project in state.projects.data" class="col-12">
 
@@ -114,7 +118,7 @@ export default {
       </div>
       <div class="col-12">
         <div class="card all-my-works bg-transparent d-flex border-0">
-          <RouterLink class="btn all-my-works text-uppercase" :to="{ name: 'projects' }">
+          <RouterLink class="btn all-my-works text-uppercase hover-underline-animation" :to="{ name: 'projects' }">
             <h1 class="">
               see all my works
             </h1>

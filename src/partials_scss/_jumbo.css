@@ -184,18 +184,43 @@ h6:hover {
         color: var(--bg-lighter);
         font-weight: 700;
         font-size: 5rem;
-        display: inline-block;    
+        display: inline-block;
     }
-    span{
+
+    span {
         font-size: 7rem;
         font-weight: 600;
         margin-left: 1.5rem;
-        color:var(--bg-light);
-    }
-
-    h1:hover{
         color: var(--bg-light);
     }
 
+    /* h1:hover {
+        color: var(--bg-light);
+        transition: transform 1.5s ease-out;
+    } */
 
+
+}
+
+.hover-underline-animation {
+    display: inline-block;
+    position: relative;
+}
+
+.hover-underline-animation::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 5px;
+    bottom: 0;
+    left: 0;
+    background-color: #0087ca;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
 }
