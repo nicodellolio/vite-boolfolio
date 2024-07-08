@@ -31,8 +31,6 @@ export default {
 <template>
   <div class="container jumbotron mx-auto rounded-3 mt-5 d-flex justify-content-evenly">
 
-
-
     <div class="icons d-flex w-75 flex-column">
       <i class="devicon-css3-plain"></i>
       <i class="devicon-bootstrap-plain"></i>
@@ -94,7 +92,6 @@ export default {
           </div>
         </div>
 
-        <h6 class="link-to-latest">Take a look to my latest project</h6>
       </a>
 
       <div class="download_cv_box">
@@ -107,6 +104,13 @@ export default {
     </div>
 
     <img class="jumbo-img" :src="state.base_api_url + '/storage/uploads/' + 'jumbo.png'" alt="">
+  </div>
+
+  <div class="goTop">
+
+    <a href="#top">
+      &uparrow;
+    </a>
   </div>
 
   <AppLatestProjects />

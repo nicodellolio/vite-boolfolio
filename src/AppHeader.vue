@@ -12,7 +12,7 @@ export default {
 
 <template>
 
-  <nav class="d-flex border-bottom border-1 border-secondary align-items-center justify-content-end"
+  <nav class="d-flex border-bottom border-1 border-secondary align-items-center justify-content-end" id="top"
     style="padding: 0 15%;">
 
     <!-- <div class="nav-brand display-4 p-bg-darker px-2 my-2" style="font-weight: 900;">
@@ -27,8 +27,8 @@ export default {
           :to="{ name: 'home' }">home</RouterLink>
         <RouterLink class="nav-item-pp text-decoration-none" :class="{ 'active-item': $route.name == 'projects' }"
           :to="{ name: 'projects' }">projects</RouterLink>
-        <RouterLink class="nav-item-pp text-decoration-none" :class="{ 'active-item': $route.name == 'about' }"
-          :to="{ name: 'about' }">about</RouterLink>
+        <a v-if="$route.fullPath == '/'" class="nav-item-pp text-decoration-none" :class="{ 'active-item': $route.name == 'about' }"
+          href="#about">about</a>
         <RouterLink class="nav-item-pp text-decoration-none" :class="{ 'active-item': $route.name == 'contacts' }"
           :to="{ name: 'contacts' }">contacts</RouterLink>
       </li>

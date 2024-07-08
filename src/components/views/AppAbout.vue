@@ -24,7 +24,7 @@ export default {
 
 <template>
 
-    <div class="container">
+    <div class="container" id="about" >
         <h1 class="page_title">About Me</h1>
         <div class="hr"></div>
 
