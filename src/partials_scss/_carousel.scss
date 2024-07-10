@@ -14,7 +14,6 @@ $animationSpeed: 20s;
 	margin: 10% auto 0;
 	overflow:hidden;
 	position: relative;
-	width: 1300px;
 	
 	&::before,
 	&::after {
@@ -48,6 +47,11 @@ $animationSpeed: 20s;
 
 		i{
 			font-size: 5rem;
+			
+			span{
+				font-size: 1rem;
+				margin-left: 1rem;
+			}
 			color: var(--bg-dark);
 		}
 	}

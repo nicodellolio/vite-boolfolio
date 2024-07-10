@@ -6,10 +6,12 @@ export default {
 
   data() {
     return {
-      state
+      state,
+      projects: []
     }
   },
   methods: {
+
     initializeTypewriter() {
       class TxtType {
         constructor(el, toRotate, period) {
@@ -73,6 +75,7 @@ export default {
     AOS.init({
       duration: 700,
     });
+
   }
 
 
@@ -83,12 +86,12 @@ export default {
 <template>
 
   <div id="latest-projects" class="mb-5" data-aos="fade-down">
-    <div class="row my-row d-flex flex-row flex-nowrap h-100 overflow-scroll p-5">
-      <div v-for="project in state.projects.data" class="col-12">
+    <div v-if="state.projects.data" class="row my-row d-flex flex-row flex-nowrap h-100 overflow-scroll p-5">
+      <div v-for="(project, index) in state.projects.data.slice(0 ,5)" :key="index" class="col-12">
 
         <router-link class="text-decoration-none" :to="{ name: 'SingleProject', params: { id: project.id } }">
 
-          <div class="card h-100 myCard overflow-scroll" >
+          <div class="card h-100 myCard overflow-scroll">
             <div class="title_box d-flex text-center align-items-center text-uppercase justify-content-center py-3">
 
               <h3 class="card-title pt-2">
@@ -119,7 +122,7 @@ export default {
       </div>
       <div class="col-12">
         <div class="card all-my-works bg-transparent d-flex border-0">
-          <RouterLink class="btn all-my-works text-uppercase" :to="{ name: 'projects' }">
+          <RouterLink class="btn all-my-works text-uppercase" to="/projects">
             <h1 class="hover-underline-animation">
               see all my works
             </h1>

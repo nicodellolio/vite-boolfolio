@@ -46,7 +46,7 @@ export default {
                 <div class="right-side w-50">
                   <div class="tech-type d-flex align-items-center gap-2 mb-4">
 
-                    <div v-if="project.type" class="type bg-ligh-trasparent w-adapt px-3 py-1 rounded">
+                    <div v-if="project.type" class="type bg-light-trasparent w-adapt px-3 py-1 rounded">
                       {{ project.type.name }}
                     </div>
 
@@ -74,10 +74,7 @@ export default {
                 </div>
               </div>
 
-              <div class="card-footer text-light d-flex justify-content-between align-items-center px-4">
-                <a class="btn border text-decoration-none text-light px-3 py-2 fs-5"
-                  style="background-color: var(--bg-medium);" href="javascript:history.back()">Go Back
-                </a>
+              <div class="card-footer text-light d-flex justify-content-end align-items-center px-4">
 
                 <div class="project-buttons d-flex gap-3">
 
@@ -169,5 +166,15 @@ export default {
   img {
     width: 40px;
   }
+}
+
+.badge {
+  background-color: var(--bg-medium);
+  font-size: 0.9rem;
+}
+
+.bg-light-trasparent {
+  background-color: #ffffff4a;
+  color: var(--bg-dark);
 }
 </style>

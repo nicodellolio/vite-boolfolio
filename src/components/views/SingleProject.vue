@@ -58,7 +58,7 @@ export default {
                         <div class="right-side w-50">
                             <div class="tech-type d-flex align-items-center gap-2 mb-4">
 
-                                <div v-if="project.type" class="type bg-ligh-trasparent w-adapt px-3 py-1 rounded">
+                                <div v-if="project.type" class="type bg-light-trasparent w-adapt px-3 py-1 rounded">
                                     {{ project.type.name }}
                                 </div>
 
@@ -130,7 +130,7 @@ export default {
     width: fit-content;
 }
 
-.bg-ligh-trasparent {
+.bg-light-trasparent {
     background-color: #ffffff4a;
     color: var(--bg-dark);
 }

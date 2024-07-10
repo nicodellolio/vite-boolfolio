@@ -1,14 +1,12 @@
 <script>
 import { state } from '../state';
 import AppLatestProjects from './AppLatestProjects.vue';
-import AppAbout from './views/AppAbout.vue';
 
 export default {
   name: 'AppJumbo',
 
   components: {
     AppLatestProjects,
-    AppAbout
   },
 
   data() {
@@ -106,18 +104,7 @@ export default {
     <img class="jumbo-img" :src="state.base_api_url + '/storage/uploads/' + 'jumbo.png'" alt="">
   </div>
 
-  <div class="goTop">
-
-    <a href="#top">
-      &uparrow;
-    </a>
-  </div>
-
   <AppLatestProjects />
-
-  <AppAbout />
-
-
 
 </template>
 

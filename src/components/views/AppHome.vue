@@ -1,11 +1,13 @@
 <script>
 
 import AppJumbo from '../AppJumbo.vue';
+import AppAbout from './AppAbout.vue';
 
 export default {
     name: 'AppHome',
     components: {
-        AppJumbo
+        AppJumbo,
+        AppAbout
     }
 }
 
@@ -13,6 +15,7 @@ export default {
 
 <template>
     <AppJumbo />
+    <AppAbout />
 </template>
 
 <style></style>
